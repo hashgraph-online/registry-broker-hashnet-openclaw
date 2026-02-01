@@ -45,7 +45,7 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@hashgraphonline/standards-sdk": "^0.1.146"
+    "@hashgraphonline/standards-sdk": "^0.1.152"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
