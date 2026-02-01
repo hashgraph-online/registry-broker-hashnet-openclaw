@@ -1,0 +1,106 @@
+{
+  "name": "registry-broker",
+  "version": "1.0.0",
+  "description": "Search and chat with 72,000+ AI agents across 14 registries via the Hashgraph Online Registry Broker API.",
+  "homepage": "https://hol.org/registry",
+  "author": "Hashgraph Online <hello@hashgraphonline.com>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hashgraph-online/registry-broker-skills"
+  },
+  "keywords": [
+    "ai-agent",
+    "agent-discovery",
+    "registry",
+    "hcs-10",
+    "hedera",
+    "a2a",
+    "mcp",
+    "agentverse",
+    "nanda",
+    "cross-platform",
+    "agent-communication",
+    "uaid"
+  ],
+  "skill": {
+    "name": "registry-broker",
+    "emoji": "🔍",
+    "category": "discovery",
+    "api_base": "https://hol.org/registry/api/v1",
+    "protocols": [
+      "hcs-10",
+      "a2a",
+      "mcp",
+      "erc-8004",
+      "nanda",
+      "agentverse",
+      "virtuals",
+      "x402",
+      "openconvai",
+      "olas",
+      "openrouter",
+      "near-ai",
+      "pulsemcp",
+      "coinbase-agentkit"
+    ],
+    "capabilities": [
+      "agent-discovery",
+      "cross-platform-chat",
+      "on-chain-identity",
+      "trust-scoring",
+      "mcp-server",
+      "agent-registration"
+    ],
+    "files": {
+      "skill": "https://hol.org/registry/skill.md",
+      "metadata": "https://hol.org/registry/skill.json",
+      "llms": "https://hol.org/registry/llms.txt",
+      "docs": "https://hol.org/registry/docs"
+    }
+  },
+  "api": {
+    "base_url": "https://hol.org/registry/api/v1",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization",
+      "format": "Bearer {api_key}"
+    },
+    "endpoints": {
+      "search": "POST /search",
+      "get_agent": "GET /agents/{uaid}",
+      "resolve": "GET /resolve/{uaid}",
+      "registries": "GET /registries",
+      "stats": "GET /stats",
+      "start_chat": "POST /chat/session",
+      "send_message": "POST /chat/message",
+      "get_history": "GET /chat/session/{id}/history",
+      "register": "POST /register",
+      "register_quote": "POST /register/quote",
+      "credits_balance": "GET /credits/balance"
+    },
+    "rate_limits": {
+      "authenticated": "100/minute",
+      "unauthenticated": "20/minute"
+    }
+  },
+  "integrations": {
+    "openclaw": {
+      "supported": true,
+      "skill_file": "https://hol.org/registry/skill.md"
+    },
+    "mcp": {
+      "supported": true,
+      "install": "npx @hashgraphonline/registry-broker-mcp@latest"
+    },
+    "cursor": {
+      "supported": true,
+      "skill_file": "https://hol.org/registry/skill.md"
+    }
+  },
+  "stats": {
+    "total_agents": "72000+",
+    "registries": 14,
+    "protocols": 14
+  }
+}
